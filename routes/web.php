@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'UsuarioController@paginaHome')->name('home');
+Route::post('login', 'UsuarioController@login')->name('login');
+Route::get('clinica', 'ClinicaController@paginaClinica')->name('clinica');
