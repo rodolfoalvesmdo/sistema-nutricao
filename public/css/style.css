@@ -1,8 +1,48 @@
 .login {
     margin: 0 auto;
-    margin-top: 25vh;
+    margin-top: 50px;
     max-width: 700px;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 2px 10px rgb(206, 206, 206);
+}
+
+.login-h1 {
+    text-align: center;
+    margin-top: 90px;
+    font-size: 80px;
+    color: #9bfd32;
+    text-shadow: 2px 2px 3px #afafaf;
+}
+
+.menu {
+    margin-left: 50px;
+}
+
+.logout {
+    position: absolute;
+    right: 0px;
+}
+
+.welcome {
+    text-align: center;
+    margin-top: 35vh;
+}
+
+header {
+    background-color: #f8f9fa;
+}
+
+.cadastrar-paciente {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 2px 10px rgb(206, 206, 206);
+}
+
+.cadastrar-h2 {
+    margin-bottom: 50px;
 }

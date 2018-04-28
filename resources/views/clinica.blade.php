@@ -1,3 +1,7 @@
+@extends('template')
+	
+@section('content')
 
+<h1 class="welcome">Bem-vindo(a) ao ClinNutri.</h1>
 
-<h1>Seja bem-vindo(a) a Clínica de Nutrição.</h1>
+@endsection

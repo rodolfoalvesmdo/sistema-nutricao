@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
-
+    <h1 class="login-h1">ClinNutri</h1>
     <div class="login">
     <form action="{{ route('login') }}" method="post">
     @csrf
@@ -27,7 +27,7 @@
             <label for="campo-senha">Senha</label>
             <input type="password" class="form-control" name="senha" id="campo-senha" placeholder="Digite sua senha">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Entrar</button>
     </form>
     </div>    
 

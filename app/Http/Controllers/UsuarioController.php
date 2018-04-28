@@ -18,4 +18,8 @@ class UsuarioController extends Controller
             return redirect()->back()->with('erro', 'Senha ou login inválido.');
     
     }
+
+    public function logout() {
+        return redirect()->route('home');
+    }
 }

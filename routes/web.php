@@ -14,4 +14,8 @@
 
 Route::get('/', 'UsuarioController@paginaHome')->name('home');
 Route::post('login', 'UsuarioController@login')->name('login');
+Route::get('logout', 'UsuarioController@logout')->name('logout');
 Route::get('clinica', 'ClinicaController@paginaClinica')->name('clinica');
+Route::get('cadastrar-paciente', 'ClinicaController@paginaCadastrar')->name('cadastrar-paciente');
+Route::post('salvar', 'ClinicaController@cadastrarPaciente')->name('salvar');
+
