@@ -73,45 +73,28 @@
             <div class="form-group col-md-4">
                 <label for="campo-estado">Estado *</label>
                 <input type="text" class="form-control" name="estado" id="campo-estado">
-                <!-- <select id="campo-estado" class="form-control">
-                    <option selected>Selecione o Estado</option>
-                    <option name="estado">AC</option>
-                    <option name="estado">AL</option>
-                    <option name="estado">AP</option>
-                    <option name="estado">AM</option>               
-                    <option name="estado">BA</option>               
-                    <option name="estado">CE</option>               
-                    <option name="estado">DF</option>               
-                    <option name="estado">ES</option>               
-                    <option name="estado">GO</option>               
-                    <option name="estado">MA</option>               
-                    <option name="estado">MT</option>               
-                    <option name="estado">MS</option>               
-                    <option name="estado">MG</option>               
-                    <option name="estado">PA</option>               
-                    <option name="estado">PB</option>               
-                    <option name="estado">PR</option>               
-                    <option name="estado">PE</option>               
-                    <option name="estado">PI</option> 
-                    <option name="estado">RJ</option>               
-                    <option name="estado">RN</option>               
-                    <option name="estado">RS</option>               
-                    <option name="estado">RO</option>               
-                    <option name="estado">RR</option>               
-                    <option name="estado">SC</option>               
-                    <option name="estado">SP</option>               
-                    <option name="estado">SE</option>               
-                    <option name="estado">TO</option>        
-                                
-                </select> -->
             </div>
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
                 <input type="numeric" class="form-control" name="cep" id="campo-cep">
-            </div>
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>                                
         </div>
 
+        <div class="form-row last-form-row">
+            <div class="form-group col-md-12">
+            <label for="">Convênio *</label></br>
+            <select class="convenio">
+                <option name="convenio" value="unimed">PARTICULAR</option>
+                <option name="convenio" value="unimed">UNIMED</option>
+                <option name="convenio" value="smile">SMILE</option>
+                <option name="convenio" value="hapvida">HAPVIDA</option>
+                <option name="convenio" value="unimed">BRADESCO</option>
+            </select>
+            </div>
+        </div>
+        
+        <button type="submit" name="cadastrar" value="0" class="btn btn-primary">Cancelar</button>
+        <button type="submit" name="cadastrar" value="1" class="btn btn-primary btn-cadastrar">Cadastrar</button>    
     </form>
 </div>
 

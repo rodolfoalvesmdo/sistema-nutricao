@@ -18,7 +18,18 @@
             </button>
             <div class="collapse navbar-collapse menu" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="{{ route('cadastrar-paciente') }}">Cadastrar Paciente<span class="sr-only">(current)</span></a>
+
+                    <div class="nav-item dropdown menu-drop">
+                        <a href="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('cadastrar-paciente') }}">Novo</a>
+                            <a class="dropdown-item" href="{{ route('cadastrar-paciente') }}">Pesquisar</a>
+                        </div>                        
+                    </div>
+
+                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Consulta</a>
+                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Agendar</a>
+                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Ficha Médica</a>
                     <a class="nav-item nav-link logout" href="{{ route('logout') }}">Sair</a>
                 </div>
             </div>

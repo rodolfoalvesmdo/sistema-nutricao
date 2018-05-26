@@ -10,30 +10,39 @@ class ClinicaController extends Controller
         return view('clinica');
     }
 
-    public function paginaCadastrar(){
+    public function paginaCadastrar() {
         return view('cadastrar');
     }
 
     public function cadastrarPaciente(Request $request) {
         
-        $request->validate([
-            'nome' => 'required',
-            'cpf' => 'required | numeric',
-            'telefone' => 'required | numeric',
-            'endereco' => 'required',
-            'bairro' => 'required',
-            'cidade' => 'required',
-            'estado' => 'required',
-            'cep' => 'required | numeric'
-        ]);
-    
-        if(!empty($_FILES['foto']['name'])) {
-            $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
+        if ($request->cadastrar == 1) {
+        
+            $request->validate([
+                'nome' => 'required',
+                'cpf' => 'required | numeric',
+                'telefone' => 'required | numeric',
+                'endereco' => 'required',
+                'bairro' => 'required',
+                'cidade' => 'required',
+                'estado' => 'required',
+                'cep' => 'required | numeric'
+            ]);
+        
+            if(!empty($_FILES['foto']['name'])) {
+                $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
+            }
+
+            echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
+
+            // com redirect()->back(); o echo acima não funciona
+            return view('cadastrar');
+            } else {
+                return redirect()->route('clinica');
+            }
         }
 
-        echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
-
-        // com redirect()->back(); o echo acima não funciona
-        return view('cadastrar');
+    public function paginaConsulta() {
+        return view('consulta');
     }
 }
