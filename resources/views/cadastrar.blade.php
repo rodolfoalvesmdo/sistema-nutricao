@@ -24,71 +24,71 @@
 
         <div class="form-group">
             <label for="campo-nome">Nome *</label>
-            <input type="text" class="form-control" name="nome" id="campo-nome">
+            <input type="text" class="form-control" name="nome" id="campo-nome" value="{{ old('nome') }}">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="campo-rg">RG</label>
-                <input type="numeric" class="form-control" name="rg" id="campo-rg">
+                <input type="numeric" class="form-control" name="rg" id="campo-rg" value="{{ old('rg') }}">
             </div>
             <div class="form-group col-md-6">
                 <label for="campo-cpf">CPF *</label>
-                <input type="numeric" class="form-control" name="cpf" id="campo-cpf">
+                <input type="numeric" class="form-control" name="cpf" id="campo-cpf" value="{{ old('cpf') }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label for="campo-telefone">Telefone *</label>
-                <input type="tel" class="form-control" name="telefone" id="campo-telefone">
+                <input type="tel" class="form-control" name="telefone" id="campo-telefone" value="{{ old('telefone') }}">
             </div>
             <div class="form-group col-md-8">
                 <label for="campo-email">E-mail</label>
-                <input type="text" class="form-control" name="email" id="campo-email">
+                <input type="text" class="form-control" name="email" id="campo-email" value="{{ old('email') }}">
             </div>
         </div>
 
         <div class="form-group">
             <label for="campo-endereco">Endereço *</label>
-            <input type="text" class="form-control" name="endereco" id="campo-endereco">
+            <input type="text" class="form-control" name="endereco" id="campo-endereco" value="{{ old('endereco') }}">
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-8">
                 <label for="campo-complemento">Complemento</label>
-                <input type="text" class="form-control" name="complemento" id="campo-complemento">
+                <input type="text" class="form-control" name="complemento" id="campo-complemento" value="{{ old('complemento') }}">
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-bairro">Bairro *</label>
-                <input type="text" class="form-control" name="bairro" id="campo-bairro">
+                <input type="text" class="form-control" name="bairro" id="campo-bairro" value="{{ old('bairro') }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="campo-cidade">Cidade *</label>
-                <input type="text" class="form-control" name="cidade" id="campo-cidade">
+                <input type="text" class="form-control" name="cidade" id="campo-cidade" value="{{ old('cidade') }}">
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-estado">Estado *</label>
-                <input type="text" class="form-control" name="estado" id="campo-estado">
+                <input type="text" class="form-control" name="estado" id="campo-estado" value="{{ old('estado') }}">
             </div>
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
-                <input type="numeric" class="form-control" name="cep" id="campo-cep">
+                <input type="numeric" class="form-control" name="cep" id="campo-cep" value="{{ old('cep') }}">
             </div>                                
         </div>
 
         <div class="form-row last-form-row">
             <div class="form-group col-md-12">
             <label for="">Convênio *</label></br>
-            <select class="convenio">
-                <option name="convenio" value="unimed">PARTICULAR</option>
-                <option name="convenio" value="unimed">UNIMED</option>
-                <option name="convenio" value="smile">SMILE</option>
-                <option name="convenio" value="hapvida">HAPVIDA</option>
-                <option name="convenio" value="unimed">BRADESCO</option>
+            <select name="convenio" class="convenio">
+                <option value="unimed">PARTICULAR</option>
+                <option value="unimed">UNIMED</option>
+                <option value="smile">SMILE</option>
+                <option value="hapvida">HAPVIDA</option>
+                <option value="unimed">BRADESCO</option>
             </select>
             </div>
         </div>

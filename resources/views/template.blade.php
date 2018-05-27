@@ -23,7 +23,7 @@
                         <a href="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cadastro</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('cadastrar-paciente') }}">Novo</a>
-                            <a class="dropdown-item" href="{{ route('cadastrar-paciente') }}">Pesquisar</a>
+                            <a class="dropdown-item" href="{{ route('pesquisar') }}">Pesquisar</a>
                         </div>                        
                     </div>
 
