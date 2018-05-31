@@ -27,9 +27,9 @@
                         </div>                        
                     </div>
 
-                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Consulta</a>
-                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Agendar</a>
-                    <a class="nav-item nav-link" href="{{ route('consulta') }}">Ficha Médica</a>
+                    <a class="nav-item nav-link" href="">Consulta</a>
+                    <a class="nav-item nav-link" href="">Agenda</a>
+                    <a class="nav-item nav-link" href="">Ficha Médica</a>
                     <a class="nav-item nav-link logout" href="{{ route('logout') }}">Sair</a>
                 </div>
             </div>
@@ -44,5 +44,6 @@
 
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/script.js')}}"></script>
 </body>
 </html>

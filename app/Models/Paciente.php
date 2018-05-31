@@ -18,6 +18,26 @@ class Paciente extends Model
         'cidade',
         'estado',
         'cep',
-        'convenio'
+        'convenio',
+        'peso',
+        'altura',
+        'imc',
+        'mm',
+        'gordura',
+        'lactose',
+        'diabetes',
+        'hipertensao',
+        'cardiaco',
+        'exercicio',
+        'frequencia',
+        'rf_manha',
+        'rf_tarde',
+        'rf_noite',
+        'cafe_manha',
+        'lanche_manha',
+        'almoco',
+        'lanche_tarde',
+        'jantar',
+        'ceia'
     ];
 }

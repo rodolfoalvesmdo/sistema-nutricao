@@ -154,3 +154,17 @@ header {
     background-color: #e0e0e0;
     border-radius: 4px;
 }
+
+#plano textarea, #recordatorio textarea {
+    resize: none;
+}
+
+.tab-pane {
+    margin: auto;
+    margin-top: 20px;
+    max-width: 840px;
+}
+
+.tab-content {
+    margin-bottom: 50px;
+}

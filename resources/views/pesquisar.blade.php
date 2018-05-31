@@ -36,6 +36,7 @@
 
             </li>
             <li><a href="{{ route('edit-sc', ['id' => $paciente['id']] ) }}">Editar</a></li> 
+            <li><a href="{{ route('consulta', ['id' => $paciente['id']] ) }}">Ficha Médica</a></li> 
             
             
 

@@ -38,7 +38,7 @@
 
         <div class="form-group">
             <label for="campo-endereco">Endereço *</label>
-            <input type="text" class="form-control" name="endereco" id="campo-endereco" value="{{ $paciente['endereco'] }}" disabled>
+            <input type="text" class="form-control" name="endereco" id="rua" value="{{ $paciente['endereco'] }}" disabled>
         </div>
 
         <div class="form-row">
@@ -48,22 +48,22 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-bairro">Bairro *</label>
-                <input type="text" class="form-control" name="bairro" id="campo-bairro" value="{{ $paciente['bairro'] }}" disabled>
+                <input type="text" class="form-control" name="bairro" id="bairro" value="{{ $paciente['bairro'] }}" disabled>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="campo-cidade">Cidade *</label>
-                <input type="text" class="form-control" name="cidade" id="campo-cidade" value="{{ $paciente['cidade'] }}" disabled>
+                <input type="text" class="form-control" name="cidade" id="cidade" value="{{ $paciente['cidade'] }}" disabled>
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-estado">Estado *</label>
-                <input type="text" class="form-control" name="estado" id="campo-estado" value="{{ $paciente['estado'] }}" disabled>
+                <input type="text" class="form-control" name="estado" id="uf" value="{{ $paciente['estado'] }}" disabled>
             </div>
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
-                <input type="numeric" class="form-control" name="cep" id="campo-cep" value="{{ $paciente['cep'] }}" disabled>
+                <input type="numeric" class="form-control" name="cep" id="cep" value="{{ $paciente['cep'] }}" OnKeyPress="formatar('#####-###', this)" onblur="pesquisacep(this.value)" disabled>
             </div>                                
         </div>
 

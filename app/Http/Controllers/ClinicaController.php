@@ -27,14 +27,28 @@ class ClinicaController extends Controller
                 'bairro' => 'required',
                 'cidade' => 'required',
                 'estado' => 'required',
-                'cep' => 'required | numeric'
+                'cep' => 'required'
             ]);
         
             if(!empty($_FILES['foto']['name'])) {
                 $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
             }
 
-            Paciente::create($request->all());
+            // Paciente::create($request->all());
+            Paciente::create($request->only([
+                'nome',
+                'rg',
+                'cpf',
+                'telefone',
+                'email',
+                'endereco',
+                'complemento',
+                'bairro',
+                'cidade',
+                'estado',
+                'cep',
+                'convenio'
+            ]));
 
             echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
             
@@ -45,8 +59,9 @@ class ClinicaController extends Controller
             }
     }
 
-    public function paginaConsulta() {
-        return view('consulta');
+    public function paginaConsulta(int $id) {
+        $paciente = Paciente::find($id);
+        return view('consulta', ['paciente' => $paciente]);
     }
     
     public function pesquisarPaciente() {
@@ -118,6 +133,53 @@ class ClinicaController extends Controller
         $paciente = Paciente::find($id);
         $paciente->delete();
         return redirect()->route('pesquisar');
+    }
+
+    public function salvarFicha(Request $request) {
+        
+        if($request->salvar == 0) {
+            return redirect()->route('pesquisar');
+        } else {
+
+            $request->validate([
+                'peso' => 'required | numeric',
+                'altura' => 'required | numeric',
+                'imc' => 'required | numeric',
+                'mm' => 'required | numeric',
+                'gordura' => 'required | numeric'
+            ]);
+
+            $id = $request->salvar;
+            $paciente = Paciente::find($id);                            
+            $paciente->peso = $request->peso;
+            $paciente->altura = $request->altura;
+            $paciente->imc = $request->imc;
+            $paciente->mm = $request->mm;
+            $paciente->gordura = $request->gordura;
+            $paciente->lactose = $request->lactose;
+            $paciente->diabetes = $request->diabetes;
+            $paciente->hipertensao = $request->hipertensao;
+            $paciente->cardiaco = $request->cardiaco;
+            $paciente->exercicio = $request->exercicio;
+            $paciente->frequencia = $request->frequencia;
+            $paciente->rf_manha = $request->rf_manha;
+            $paciente->rf_tarde = $request->rf_tarde;
+            $paciente->rf_noite = $request->rf_noite;
+            $paciente->cafe_manha = $request->cafe_manha;
+            $paciente->lanche_manha = $request->lanche_manha;
+            $paciente->almoco = $request->almoco;
+            $paciente->lanche_tarde = $request->lanche_tarde;
+            $paciente->jantar = $request->jantar;
+            $paciente->ceia = $request->ceia;
+
+            $paciente->save();
+
+            // echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
+            
+            // com redirect()->back(); o echo acima não funciona
+            return redirect()->route('pesquisar');
+        }
+            
     }
 
 }

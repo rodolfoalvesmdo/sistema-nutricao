@@ -51,7 +51,7 @@
 
         <div class="form-group">
             <label for="campo-endereco">Endereço *</label>
-            <input type="text" class="form-control" name="endereco" id="campo-endereco" value="{{ old('endereco') }}">
+            <input type="text" class="form-control" name="endereco" id="rua" value="{{ old('endereco') }}">
         </div>
 
         <div class="form-row">
@@ -61,22 +61,22 @@
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-bairro">Bairro *</label>
-                <input type="text" class="form-control" name="bairro" id="campo-bairro" value="{{ old('bairro') }}">
+                <input type="text" class="form-control" name="bairro" id="bairro" value="{{ old('bairro') }}">
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="campo-cidade">Cidade *</label>
-                <input type="text" class="form-control" name="cidade" id="campo-cidade" value="{{ old('cidade') }}">
+                <input type="text" class="form-control" name="cidade" id="cidade" value="{{ old('cidade') }}">
             </div>
             <div class="form-group col-md-4">
                 <label for="campo-estado">Estado *</label>
-                <input type="text" class="form-control" name="estado" id="campo-estado" value="{{ old('estado') }}">
+                <input type="text" class="form-control" name="estado" id="uf" value="{{ old('estado') }}">
             </div>
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
-                <input type="numeric" class="form-control" name="cep" id="campo-cep" value="{{ old('cep') }}">
+                <input type="numeric" class="form-control" name="cep" id="cep" value="{{ old('cep') }}" OnKeyPress="formatar('#####-###', this)" onblur="pesquisacep(this.value)">
                 <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
             </div>                                
         </div>
