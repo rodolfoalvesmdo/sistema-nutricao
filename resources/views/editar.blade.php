@@ -83,11 +83,11 @@
             <div class="form-group col-md-14">
                 <label for="">Convênio *</label></br>
                 <select name="convenio" class="convenio">
-                    <option value="unimed">PARTICULAR</option>
+                    <option value="particular">PARTICULAR</option>
                     <option value="unimed">UNIMED</option>
                     <option value="smile">SMILE</option>
                     <option value="hapvida">HAPVIDA</option>
-                    <option value="unimed">BRADESCO</option>
+                    <option value="bradesco">BRADESCO</option>
                 </select>
             </div>
         </div>

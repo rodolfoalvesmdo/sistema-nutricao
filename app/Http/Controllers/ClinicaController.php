@@ -34,21 +34,6 @@ class ClinicaController extends Controller
                 $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
             }
 
-            // $paciente = new Paciente;
-            // $paciente->nome = $request->nome;
-            // $paciente->rg = $request->rg;
-            // $paciente->cpf = $request->cpf;
-            // $paciente->telefone = $request->telefone;
-            // $paciente->email = $request->email;
-            // $paciente->endereco = $request->endereco;
-            // $paciente->complemento = $request->complemento;
-            // $paciente->bairro = $request->bairro;
-            // $paciente->cidade = $request->cidade;
-            // $paciente->estado = $request->estado;
-            // $paciente->cep = $request->cep;
-            // $paciente->convenio = $request->convenio;
-            // $paciente->save();
-
             Paciente::create($request->all());
 
             echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
@@ -74,15 +59,19 @@ class ClinicaController extends Controller
         return view('cadastro-paciente', ['paciente' => $paciente]);
     }
 
-    public function editarCadastro(Request $request) {
+    public function editarCadastro(Request $request, int $id) {
+        
+        $paciente = Paciente::find($id);
         if($request->editar == 0) {
             return redirect()->route('pesquisar');
-        } else {         
-        
-            $id = $request->editar;
-            $paciente = Paciente::find($id);
-            return view('editar', ['paciente' => $paciente]);
-        }
+        }            
+        return view('editar', ['paciente' => $paciente]);
+            
+    }
+
+    public function editarShortcut(int $id) {
+        $paciente = Paciente::find($id);
+        return view('editar', ['paciente' => $paciente]);
     }
 
     public function editSave(Request $request) {
@@ -123,6 +112,12 @@ class ClinicaController extends Controller
 
             return redirect()->route('cadastro-paciente', ['id' => $paciente->id]);
         }
+    }
+
+    public function excluirPaciente(int $id) {
+        $paciente = Paciente::find($id);
+        $paciente->delete();
+        return redirect()->route('pesquisar');
     }
 
 }

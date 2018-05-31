@@ -3,7 +3,7 @@
 
 <div class="cadastrar-paciente">
     <h2 class="cadastrar-h2">Cadastro Paciente</h2>
-    <form action="{{ route('editar') }}">
+    <form action="{{ route('editar', ['editar' => $paciente['id']] ) }}">
     
         <div class="form-group">
             <label for="campo-foto">Foto</label>

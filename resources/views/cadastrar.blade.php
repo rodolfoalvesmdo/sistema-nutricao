@@ -77,6 +77,7 @@
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
                 <input type="numeric" class="form-control" name="cep" id="campo-cep" value="{{ old('cep') }}">
+                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
             </div>                                
         </div>
 
@@ -84,11 +85,11 @@
             <div class="form-group col-md-12">
             <label for="">Convênio *</label></br>
             <select name="convenio" class="convenio">
-                <option value="unimed">PARTICULAR</option>
+                <option value="particular">PARTICULAR</option>
                 <option value="unimed">UNIMED</option>
                 <option value="smile">SMILE</option>
                 <option value="hapvida">HAPVIDA</option>
-                <option value="unimed">BRADESCO</option>
+                <option value="bradesco">BRADESCO</option>
             </select>
             </div>
         </div>
