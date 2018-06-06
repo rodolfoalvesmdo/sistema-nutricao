@@ -4,7 +4,7 @@
 
 
 <div class="cadastrar-paciente">
-    <h2 class="cadastrar-h2">Cadastrar Paciente</h2>
+    <h2 class="cadastrar-h2">Novo Cadastro</h2>
     <form action="{{ route('salvar') }}" method="post" enctype="multipart/form-data">
     @csrf
         @if($errors->any())

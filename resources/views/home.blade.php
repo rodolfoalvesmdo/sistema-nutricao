@@ -8,7 +8,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}" />
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
-<body>
+<body class="home-body">
+
+<div class="overlay">
+
     <h1 class="login-h1">ClinNutri</h1>
     <div class="login">
     <form action="{{ route('login') }}" method="post">
@@ -33,5 +36,8 @@
 
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    
+
+</div>
 </body>
 </html>

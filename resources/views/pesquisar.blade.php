@@ -1,7 +1,7 @@
 @extends('template')
 @section('content')
 
-<h1>Pesquisar Paciente</h1>
+<h2 class="pesquisar-pacientes-h2">Pesquisar Paciente</h2>
 
 <div class="head-lista">
     <p>Nome</p>
@@ -13,7 +13,7 @@
         <ul>
             <li><a href="{{ route('cadastro-paciente', ['id' => $paciente['id']] ) }}">{{ $paciente['nome'] }}</a></li>
             <li>
-                <a href="" data-toggle="modal" data-target="#exampleModal-{{$paciente['id']}}">Excluir</a>
+                <a href="" data-toggle="modal" data-target="#exampleModal-{{$paciente['id']}}">Excluir <i class="fas fa-trash"></i></a>
                 <div class="modal fade" id="exampleModal-{{$paciente['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -35,8 +35,8 @@
                 </div>
 
             </li>
-            <li><a href="{{ route('edit-sc', ['id' => $paciente['id']] ) }}">Editar</a></li> 
-            <li><a href="{{ route('consulta', ['id' => $paciente['id']] ) }}">Ficha Médica</a></li> 
+            <li><a href="{{ route('edit-sc', ['id' => $paciente['id']] ) }}">Editar<i class="fas fa-user-edit"></i></a></li> 
+            <li><a href="{{ route('consulta', ['id' => $paciente['id']] ) }}">Ficha Médica <i class="fas fa-file-medical"></i></a></li> 
             
             
 

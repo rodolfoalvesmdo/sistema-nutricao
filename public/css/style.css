@@ -1,17 +1,22 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .login {
     margin: 0 auto;
     margin-top: 50px;
     max-width: 700px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 2px 10px rgb(206, 206, 206);
+    box-shadow: 0px 2px 10px rgb(0, 123, 123);
+    background-color: rgb(32, 210, 218, 0.8);
 }
 
 .login-h1 {
     text-align: center;
     margin-top: 90px;
     font-size: 80px;
-    color: #9bfd32;
+    color: #ff0068;
     text-shadow: 2px 2px 3px #afafaf;
 }
 
@@ -41,6 +46,7 @@
     text-align: center;
     margin-top: 35vh;
     font-weight: normal;
+    color: #20d2da;
 }
 
 .welcome span {
@@ -48,7 +54,29 @@
 }
 
 header {
-    background-color: #f8f9fa;
+    background-color: rgb(32, 210, 218) !important;
+    box-shadow: 0px 1px 4px rgb(167, 167, 167);
+}
+
+.bg-light {
+    background-color: rgb(32, 210, 218) !important;
+    /* #20d2da */
+}
+
+a.navbar-brand {
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.navbar-nav a {
+    color: #fff !important;
+    opacity: 0.8;
+}
+
+.navbar-nav a:hover {
+    color: #fff !important;
+    opacity: 1;
+
 }
 
 .cadastrar-paciente {
@@ -58,11 +86,30 @@ header {
     margin-bottom: 150px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 2px 10px rgb(206, 206, 206);
+    background-color: #e0fdfa;
+    box-shadow: 0px 2px 10px rgb(167, 167, 167);
+}
+
+.cadastrar-paciente label {
+    color: #696969;
+    font-weight: bold;
 }
 
 .cadastrar-h2 {
     margin-bottom: 50px;
+    color: #696969;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.cadastrar-h2::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    display: block;
+    background-color: #c7edef;
+    margin-top: 25px;
 }
 
 .btn-cadastrar {
@@ -86,7 +133,13 @@ header {
     margin-bottom: 150px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 2px 10px rgb(206, 206, 206);
+    background-color: #e0fdfa;
+    box-shadow: 0px 2px 10px rgb(167, 167, 167);
+}
+
+.form-consulta label {
+    color: #696969;
+    font-weight: bold;
 }
 
 .form-consulta span {
@@ -97,9 +150,11 @@ header {
 .head-lista {
     height: 50px;
     border-radius: 4px;
-    background-color: #e0e0e0;
+    background-color:  #20d2da;
     padding-left: 15px;
     padding-top: 11px;
+    color: #fff;
+    box-shadow: 0px 1px 4px rgb(167, 167, 167);
 }
 
 .head-lista p {
@@ -123,11 +178,17 @@ header {
 }
 
 .lista-pacientes ul:nth-of-type(even) {
-    background-color: #e0e0e0;
+    background-color:  #c7edef;
 }
 
 .lista-pacientes ul li a {
     text-decoration: none;
+    color:  #696969;
+}
+
+.lista-pacientes ul li a:hover {
+    text-decoration: underline;
+    color:  #696969;
 }
 
 .lista-pacientes ul li {
@@ -138,8 +199,8 @@ header {
     float: left;
 }
 
-.lista-pacientes ul li:nth-of-type(2) {
-    margin-left: 20px;
+.lista-pacientes ul li:nth-of-type(2) i {
+    margin-right: 0;
 }
 
 .label {
@@ -162,9 +223,93 @@ header {
 .tab-pane {
     margin: auto;
     margin-top: 20px;
-    max-width: 840px;
+    max-width: 1033px;
 }
 
 .tab-content {
     margin-bottom: 50px;
 }
+
+.home-body {
+    background: url("/img/bg-home.jpg") center no-repeat;
+    background-size: cover;
+    position: relative;   
+    height: 100vh;
+}
+
+.overlay {
+    background-color: rgba(124, 249, 255, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.login label {
+    color: #fff;
+    font-weight: bold;
+}
+
+.home-body .btn-primary {
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.home-body .btn-primary:hover {
+    border: 2px solid #ffffff;
+    color: rgb(32, 210, 218);
+    background-color: #fff;
+}
+
+.navbar-nav .dropdown-menu {
+    background-color: rgb(32, 210, 218);
+}
+
+.dropdown-item:hover {
+    background-color: rgb(32, 210, 218);
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #696969;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #e0fdfa;
+    border: 2px solid;
+    border-color: #c7edef #c7edef #e0fdfa;
+    
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+    color: #696969;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #c7edef;
+    border: 2px solid;
+    border-color: #c7edef #c7edef #e0fdfa;
+}
+
+.nav-tabs .nav-item.show .nav-link:hover, .nav-tabs .nav-link:hover {
+    border-color: #c7edef #c7edef #e0fdfa;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #c7edef;
+}
+
+.pesquisar-pacientes-h2 {
+    color: #696969;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+i {
+    margin-right: 35px;
+    margin-left: 2px;
+}
+
