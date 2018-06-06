@@ -19,6 +19,7 @@ class Paciente extends Model
         'estado',
         'cep',
         'convenio',
+        'image_path',
         'peso',
         'altura',
         'imc',

@@ -19,7 +19,7 @@
 
         <div class="form-group">
             <label for="campo-foto">Foto</label>
-            <input type="file" class="form-control" name="foto" id="campo-foto">
+            <input type="file" class="form-control" name="foto" id="campo-foto" accept="img/*">
         </div>
 
         <div class="form-group">

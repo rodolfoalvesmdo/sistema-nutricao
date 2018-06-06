@@ -7,6 +7,7 @@
     
         <div class="form-group">
             <label for="campo-foto">Foto</label>
+            <img src="{{ $paciente['image_path'] }}" alt="Foto" class="foto">
         </div>
 
         <div class="form-group">

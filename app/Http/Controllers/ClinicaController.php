@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Paciente;
+use App\Repositories\ImageRepository;
 
 class ClinicaController extends Controller
 {
@@ -15,7 +16,51 @@ class ClinicaController extends Controller
         return view('cadastrar');
     }
 
-    public function cadastrarPaciente(Request $request) {
+    // public function cadastrarPaciente(Request $request) {
+        
+    //     if ($request->cadastrar == 1) {
+        
+    //         $request->validate([
+    //             'nome' => 'required',
+    //             'cpf' => 'required | numeric',
+    //             'telefone' => 'required | numeric',
+    //             'endereco' => 'required',
+    //             'bairro' => 'required',
+    //             'cidade' => 'required',
+    //             'estado' => 'required',
+    //             'cep' => 'required'
+    //         ]);
+        
+    //         if(!empty($_FILES['foto']['name'])) {
+    //             $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
+    //         }
+
+    //         // Paciente::create($request->all());
+    //         Paciente::create($request->only([
+    //             'nome',
+    //             'rg',
+    //             'cpf',
+    //             'telefone',
+    //             'email',
+    //             'endereco',
+    //             'complemento',
+    //             'bairro',
+    //             'cidade',
+    //             'estado',
+    //             'cep',
+    //             'convenio'
+    //         ]));
+
+    //         echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
+            
+    //         // com redirect()->back(); o echo acima não funciona
+    //         return view('cadastrar');
+    //         } else {
+    //             return redirect()->route('clinica');
+    //         }
+    // }
+
+    public function cadastrarPaciente(Request $request, ImageRepository $repo) {
         
         if ($request->cadastrar == 1) {
         
@@ -30,12 +75,12 @@ class ClinicaController extends Controller
                 'cep' => 'required'
             ]);
         
-            if(!empty($_FILES['foto']['name'])) {
-                $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
-            }
+            // if(!empty($_FILES['foto']['name'])) {
+            //     $request->foto->storeAs('public/fotos', 'foto_paciente.jpg');
+            // }
 
             // Paciente::create($request->all());
-            Paciente::create($request->only([
+            $paciente = Paciente::create($request->only([
                 'nome',
                 'rg',
                 'cpf',
@@ -49,6 +94,11 @@ class ClinicaController extends Controller
                 'cep',
                 'convenio'
             ]));
+
+            // if($request->hasFile('foto')) {
+                $paciente->image_path = $repo->saveImage($request->foto, $paciente->id, 'fotos', 300);
+                $paciente->save();
+            // }
 
             echo "<script>alert('Paciente cadastrado com sucesso!');</script>";
             
@@ -102,7 +152,7 @@ class ClinicaController extends Controller
                 'bairro' => 'required',
                 'cidade' => 'required',
                 'estado' => 'required',
-                'cep' => 'required | numeric'
+                'cep' => 'required'
             ]);
         
             if(!empty($_FILES['foto']['name'])) {

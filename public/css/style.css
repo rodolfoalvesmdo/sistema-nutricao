@@ -313,3 +313,8 @@ i {
     margin-left: 2px;
 }
 
+.foto {
+    display: block;
+    border-radius: 10px;
+    max-width: 200px;
+}
