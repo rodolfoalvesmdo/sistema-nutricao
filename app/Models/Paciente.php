@@ -41,4 +41,8 @@ class Paciente extends Model
         'jantar',
         'ceia'
     ];
+
+    public static function buscar($keyword) {
+        return static::where('nome', 'like', $keyword . '%')->get();
+    }
 }

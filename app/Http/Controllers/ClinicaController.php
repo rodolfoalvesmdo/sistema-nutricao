@@ -114,9 +114,28 @@ class ClinicaController extends Controller
         return view('consulta', ['paciente' => $paciente]);
     }
     
-    public function pesquisarPaciente() {
-        $pacientes = Paciente::all();
-        return view('pesquisar', ['pacientes' => $pacientes]);
+    public function pesquisarPaciente(Request $request) {
+
+        $exibirPorPagina = 5;
+        $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
+
+        if($request->keyword) {
+            $paginacao = Paciente::where('nome', 'like', $request->keyword . '%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
+            $pacientes = Paciente::where('nome', 'like', $request->keyword . '%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                            ->offset($offset) //Começa a exibir a apartir de qual valor
+                            ->get();
+        } else {
+            $paginacao = Paciente::paginate($exibirPorPagina); //Exibe 5 elementos por página
+            $pacientes = Paciente::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                            ->offset($offset) //Começa a exibir a apartir de qual valor
+                            ->get();
+        }
+
+        return view('pesquisar', [
+            'pacientes' => $pacientes, 
+            'paginacao' => $paginacao, 
+            'keyword' => $request->keyword]);
+        
     }
 
     public function visualizarCadastro(int $id) {
@@ -230,6 +249,10 @@ class ClinicaController extends Controller
             return redirect()->route('pesquisar');
         }
             
+    }
+
+    public function agenda() {
+        return view('agenda');
     }
 
 }

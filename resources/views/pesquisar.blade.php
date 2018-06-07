@@ -7,6 +7,22 @@
     <p>Nome</p>
 </div>
 
+<form action="{{ route('pesquisar') }}" method="get" class="busca">
+@csrf
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Buscar" name="keyword">
+        <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
+
+@if(isset($keyword))
+    <a href="{{ route('pesquisar') }}" class="clear-keyword">{{$keyword}}<i class="fas fa-times"></i></a>
+@endif
+
 <div class="lista-pacientes">
 
     @foreach($pacientes as $paciente)
@@ -47,6 +63,10 @@
 
     
 
+</div>
+
+<div class="paginacao">
+    {{ $paginacao }}
 </div>
 
 @endsection

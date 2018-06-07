@@ -11,10 +11,12 @@
 |
 */
 
-
+// Rotas do Usuário
 Route::get('/', 'UsuarioController@paginaHome')->name('home');
 Route::post('login', 'UsuarioController@login')->name('login');
 Route::get('logout', 'UsuarioController@logout')->name('logout');
+
+// Rotas da Clínica
 Route::get('clinica', 'ClinicaController@paginaClinica')->name('clinica')->middleware('mwLogin');
 Route::get('cadastrar-paciente', 'ClinicaController@paginaCadastrar')->name('cadastrar-paciente')->middleware('mwLogin');
 Route::post('salvar', 'ClinicaController@cadastrarPaciente')->name('salvar')->middleware('mwLogin');
@@ -26,3 +28,4 @@ Route::post('edit-save', 'ClinicaController@editSave')->name('edit-save')->middl
 Route::get('edit-sc/{id}', 'ClinicaController@editarShortcut')->name('edit-sc')->middleware('mwLogin');
 Route::get('excluir/{id}', 'ClinicaController@excluirPaciente')->name('excluir')->middleware('mwLogin');
 Route::post('salvar-ficha', 'ClinicaController@salvarFicha')->name('salvar-ficha')->middleware('mwLogin');
+Route::get('agenda', 'ClinicaController@agenda')->name('agenda')->middleware('mwLogin');

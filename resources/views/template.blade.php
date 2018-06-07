@@ -31,9 +31,7 @@
                         </div>                        
                     </div>
 
-                    <a class="nav-item nav-link" href="">Consulta</a>
-                    <a class="nav-item nav-link" href="">Agenda</a>
-                    <a class="nav-item nav-link" href="">Ficha Médica</a>
+                    <a class="nav-item nav-link" href="{{ route('agenda') }}">Agenda</a>
                     <a class="nav-item nav-link logout" href="{{ route('logout') }}">Sair</a>
                 </div>
             </div>

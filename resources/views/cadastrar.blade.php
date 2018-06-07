@@ -77,7 +77,7 @@
             <div class="form-group col-md-2">
                 <label for="campo-cep">CEP *</label>
                 <input type="numeric" class="form-control" name="cep" id="cep" value="{{ old('cep') }}" OnKeyPress="formatar('#####-###', this)" onblur="pesquisacep(this.value)">
-                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
+                <a class="cep" href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
             </div>                                
         </div>
 

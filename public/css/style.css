@@ -55,7 +55,7 @@
 
 header {
     background-color: rgb(32, 210, 218) !important;
-    box-shadow: 0px 1px 4px rgb(167, 167, 167);
+    box-shadow: 0px 1px 4px #8a8989;
 }
 
 .bg-light {
@@ -87,7 +87,7 @@ a.navbar-brand {
     border-radius: 10px;
     padding: 20px;
     background-color: #e0fdfa;
-    box-shadow: 0px 2px 10px rgb(167, 167, 167);
+    box-shadow: 0px 2px 10px #8a8989;
 }
 
 .cadastrar-paciente label {
@@ -134,7 +134,7 @@ a.navbar-brand {
     border-radius: 10px;
     padding: 20px;
     background-color: #e0fdfa;
-    box-shadow: 0px 2px 10px rgb(167, 167, 167);
+    box-shadow: 0px 2px 10px #8a8989;
 }
 
 .form-consulta label {
@@ -154,7 +154,8 @@ a.navbar-brand {
     padding-left: 15px;
     padding-top: 11px;
     color: #fff;
-    box-shadow: 0px 1px 4px rgb(167, 167, 167);
+    box-shadow: 0px 1px 4px #8a8989;
+    margin-bottom: 10px;
 }
 
 .head-lista p {
@@ -317,4 +318,44 @@ i {
     display: block;
     border-radius: 10px;
     max-width: 200px;
+}
+
+.busca {
+    margin-bottom: 20px;
+}
+
+.busca i {
+    margin: 0 10px;
+}
+
+.clear-keyword {
+    background-color: #ccc;
+    padding: 7px 10px 7px 15px;
+    border-radius: 30px;
+    box-shadow: 1px 1px 1px #afafaf;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.clear-keyword:hover {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.clear-keyword i {
+    margin: 0 10px;
+    opacity: 0.3;
+}
+
+.clear-keyword i:hover {
+    opacity: 1;
+}
+
+.paginacao {
+    margin-top: 40px;
+    margin-bottom: 180px;
+}
+
+.cep {
+    font-size: 15px;
 }
